@@ -1,38 +1,45 @@
 package com.musicproj.menu;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import java.util.ArrayList;
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-public class SongAdapter extends BaseAdapter{
+
+/*
+ * This is demo code to accompany the Mobiletuts+ series:
+ * Android SDK: Creating a Music Player
+ *
+ * Sue Smith - February 2014
+ */
+
+public class SongAdapter extends BaseAdapter {
+
+    //song list and layout
     private ArrayList<Song> songs;
     private LayoutInflater songInf;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_song_adapter);
-//    }
-public SongAdapter(Context c, ArrayList<Song> theSongs){
-    songs=theSongs;
-    songInf=LayoutInflater.from(c);
-}
+
+    //constructor
+    public SongAdapter(Context c, ArrayList<Song> theSongs){
+        songs=theSongs;
+        songInf=LayoutInflater.from(c);
+    }
+
     @Override
     public int getCount() {
         return songs.size();
     }
 
     @Override
-    public Object getItem(int i) {
+    public Object getItem(int arg0) {
         return null;
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int arg0) {
         return 0;
     }
 
@@ -47,10 +54,11 @@ public SongAdapter(Context c, ArrayList<Song> theSongs){
         //get song using position
         Song currSong = songs.get(position);
         //get title and artist strings
-        songView.setText(currSong.getTitle());
+        songView.setText(currSong.getsongTitle());
         artistView.setText(currSong.getArtist());
         //set position as tag
         songLay.setTag(position);
         return songLay;
     }
+
 }

@@ -1,68 +1,46 @@
 package com.musicproj.menu;
-import android.widget.MediaController.MediaPlayerControl;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class MusicController extends AppCompatActivity implements MediaPlayerControl {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music_controller);
+import java.util.ArrayList;
+import java.util.Random;
+
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.ContentUris;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.PowerManager;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+import android.content.Context;
+
+/*
+ * This is demo code to accompany the Mobiletuts+ series:
+ * Android SDK: Creating a Music Player
+ *
+ * Sue Smith - February 2014
+ */
+
+import android.widget.MediaController;
+
+/*
+ * This is demo code to accompany the Mobiletuts+ series:
+ * Android SDK: Creating a Music Player
+ *
+ * Sue Smith - February 2014
+ */
+
+public class MusicController extends MediaController {
+
+    public MusicController(Context c){
+        super(c);
     }
 
-    @Override
-    public void start() {
+    public void hide(){}
 
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    @Override
-    public int getCurrentPosition() {
-        return 0;
-    }
-
-    @Override
-    public void seekTo(int i) {
-
-    }
-
-    @Override
-    public boolean isPlaying() {
-        return false;
-    }
-
-    @Override
-    public int getBufferPercentage() {
-        return 0;
-    }
-
-    @Override
-    public boolean canPause() {
-        return false;
-    }
-
-    @Override
-    public boolean canSeekBackward() {
-        return false;
-    }
-
-    @Override
-    public boolean canSeekForward() {
-        return false;
-    }
-
-    @Override
-    public int getAudioSessionId() {
-        return 0;
-    }
 }
