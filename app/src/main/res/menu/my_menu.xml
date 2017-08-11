@@ -5,6 +5,7 @@
     <item
         android:id="@+id/action_shuffle"
         android:icon="@drawable/android_music_player_rand"
+        android:text="Shuffle"
         android:orderInCategory="1"
         app:showAsAction="always"
         android:title="Shuffle"/>

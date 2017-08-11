@@ -4,14 +4,14 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="fill_parent"
 android:layout_height="fill_parent"
 android:orientation="vertical"
-android:background="@color/colorPrimary"
+android:background="#1e90ff"
 tools:context=".WelcomeScreen" >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OneSound"
         android:textSize="40sp"
-        android:textColor="#ffffff"
+        android:textColor="#eedd82"
         android:layout_marginTop="249dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
