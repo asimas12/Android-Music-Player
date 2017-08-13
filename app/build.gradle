@@ -10,6 +10,9 @@ buildscript {
 }
 repositories {
     maven { url 'http://repo1.maven.org/maven2' }
+    flatDir {
+        dirs 'libs'
+    }
     jcenter { url "http://jcenter.bintray.com/" }
 }
 android {
@@ -42,5 +45,8 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.android.support:support-vector-drawable:26.+'
-    testCompile 'junit:junit:4.12'
+    compile(name: 'spotify-android-auth-1.0.0', ext: 'aar')
+    compile(name: 'spotify-player-24-noconnect-2.20b', ext: 'aar')
+
+
 }
