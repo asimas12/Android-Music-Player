@@ -16,6 +16,9 @@ repositories {
     jcenter { url "http://jcenter.bintray.com/" }
 }
 android {
+    lintOptions{
+        checkReleaseBuilds false
+    }
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
