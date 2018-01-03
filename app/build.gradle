@@ -2,13 +2,21 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         jcenter()
+
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:2.3.3"
+
+        classpath 'com.android.tools.build:gradle:3.0.1'
+
+
     }
 }
 repositories {
+
+
+    mavenCentral()
+    maven { url "https://jitpack.io" }
     maven { url 'http://repo1.maven.org/maven2' }
     flatDir {
         dirs 'libs'
@@ -20,7 +28,7 @@ android {
         checkReleaseBuilds false
     }
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+
     defaultConfig {
         applicationId "com.musicproj.menu"
         minSdkVersion 16
@@ -39,10 +47,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile 'com.github.kaaes:spotify-web-api-android:0.4.1'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.+'
@@ -50,6 +59,5 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:26.+'
     compile(name: 'spotify-android-auth-1.0.0', ext: 'aar')
     compile(name: 'spotify-player-24-noconnect-2.20b', ext: 'aar')
-
-
+    implementation project(':spotify-web-api-android-0.4.1')
 }

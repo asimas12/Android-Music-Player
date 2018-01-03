@@ -46,15 +46,24 @@
 
         <service android:name="com.musicproj.menu.MusicService" />
 
+
+        <activity
+            android:name="com.spotify.sdk.android.authentication.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".Song" />
+
+        <activity android:name=".SongAdapter" />
+        <activity android:name=".MusicController" />
     </application>
 
-    <activity
-        android:name="com.spotify.sdk.android.authentication.LoginActivity"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-    <activity android:name=".Song" />
+    <!--<activity-->
+        <!--android:name="com.spotify.sdk.android.authentication.LoginActivity"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"/>-->
+    <!--<activity android:name=".Song" />-->
 
-    <activity android:name=".SongAdapter" />
-    <activity android:name=".MusicController" />
+    <!--<activity android:name=".SongAdapter" />-->
+    <!--<activity android:name=".MusicController" />-->
+
 
     packagingOptions {
     // Exclude file to avoid

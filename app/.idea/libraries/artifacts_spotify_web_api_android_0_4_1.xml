@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="artifacts:spotify-web-api-android-0.4.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spotify-web-api-android-0.4.1.aar/df08dde3203c690b1923beccbcf9612a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spotify-web-api-android-0.4.1.aar/df08dde3203c690b1923beccbcf9612a/jars/libs/jacocoagent.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spotify-web-api-android-0.4.1.aar/df08dde3203c690b1923beccbcf9612a/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

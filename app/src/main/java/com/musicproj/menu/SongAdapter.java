@@ -9,16 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/*
- * This is demo code to accompany the Mobiletuts+ series:
- * Android SDK: Creating a Music Player
- *
- * Sue Smith - February 2014
- */
 
 public class SongAdapter extends BaseAdapter {
 
-    //song list and layout
     private ArrayList<Song> songs;
     private LayoutInflater songInf;
 

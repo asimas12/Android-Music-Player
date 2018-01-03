@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spotify-android-auth-1.0.0:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spotify-android-auth-1.0.0.aar/cbe3f11782e452c2f4b6172b7885e415/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spotify-android-auth-1.0.0.aar/cbe3f11782e452c2f4b6172b7885e415/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,40 +1,52 @@
 package com.musicproj.menu;
 
+//////////
+
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.provider.SyncStateContract;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+
+import java.util.AbstractCollection;
+import java.util.HashMap;
+import java.util.Map;
+
+import kaaes.spotify.webapi.android.SpotifyService;
+import kaaes.spotify.webapi.android.models.AlbumSimple;
+import kaaes.spotify.webapi.android.models.ArtistSimple;
+import kaaes.spotify.webapi.android.models.Pager;
+import kaaes.spotify.webapi.android.models.SavedTrack;
+
+
+/////////////
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import com.musicproj.menu.MusicService.MusicBinder;
 
 import android.Manifest;
 import android.os.Build;
 import android.support.v7.widget.Toolbar;
-import android.app.ActionBar;
 
 import android.net.Uri;
-import android.os.Bundle;
 import android.os.IBinder;
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.MediaController.MediaPlayerControl;
 
-import android.view.MenuInflater;
-
 import android.widget.Toast;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
@@ -49,8 +61,10 @@ import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
 
-
 import android.content.pm.PackageManager;
+
+import retrofit.client.Response;
+
 public class MainActivity extends AppCompatActivity implements MediaPlayerControl, SpotifyPlayer.NotificationCallback, ConnectionStateCallback {
     // TODO: Replace with your client ID
     private static final String CLIENT_ID = "409155dd77c148729e45f0f999c27485";
@@ -425,27 +439,48 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
         getMenuInflater().inflate(R.menu.my_menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.action_setting){
-            startActivity(new Intent(this,SettingsActivity.class));
+        if (item.getItemId() == R.id.action_shuffle) {
+            musicSrv.setShuffle();
 
-        }
-        if(item.getItemId() == R.id.action_import_music){
-            Toast.makeText(MainActivity.this, "Importing Selected Music Libraries...", Toast.LENGTH_SHORT).show();
+            return super.onOptionsItemSelected(item);
         }
 
-        switch (item.getItemId()) {
-            case R.id.action_shuffle:
-                musicSrv.setShuffle();
-                break;
-            case R.id.action_end:
-                stopService(playIntent);
-                musicSrv=null;
-                System.exit(0);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
+return false;
     }
+
+//
+//    private void loadPage(int offset,final List<String> albumIds,final List<String> artistIds){
+//        Map<String,Object> options=new HashMap<>();
+//        options.put(SpotifyService.OFFSET,offset);
+//        options.put(SpotifyService.LIMIT, SyncStateContract.Constants.PAGE_LIMIT);
+//        getSpotifyService().getMySavedTracks(options,new Callback<Pager<SavedTrack>>(){
+//                    @Override public void success(    Pager<SavedTrack> savedTrackPager,    Response response){
+//                        ArrayList<kaaes.spotify.webapi.android.models.Track> songs=new ArrayList<>();
+//                        ArrayList<AlbumSimple> albums=new ArrayList<>();
+//                        ArrayList<ArtistSimple> artists=new ArrayList<>();
+//                        for (      final SavedTrack savedTrack : savedTrackPager.items) {
+//                            songs.add(savedTrack.track);
+//                            AlbumSimple album=savedTrack.track.album;
+//                            if (!albumIds.contains(album.id)) {
+//                                albums.add(album);
+//                                albumIds.add(album.id);
+//                            }
+//                            for (        ArtistSimple artist : savedTrack.track.artists) {
+//                                if (!artistIds.contains(artist.id)) {
+//                                    artists.add(artist);
+//                                    artistIds.add(artist.id);
+//                                }
+//                            }
+//                        }
+//
+//                    }
+//
+//                }
+//        );
+//    }
+
 
 }

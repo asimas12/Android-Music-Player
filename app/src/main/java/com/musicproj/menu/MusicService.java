@@ -109,6 +109,7 @@ public class MusicService extends Service implements
             Log.e("MUSIC SERVICE", "Error setting data source", e);
         }
         player.prepareAsync();
+
     }
 
     //set the song
@@ -207,10 +208,12 @@ public class MusicService extends Service implements
         stopForeground(true);
     }
 
-    //toggle shuffle
+
     public void setShuffle(){
-        if(shuffle) shuffle=false;
-        else shuffle=true;
+        if(shuffle)
+            shuffle=false;
+        else
+            shuffle=true;
     }
 
 }
